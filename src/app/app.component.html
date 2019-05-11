@@ -1,9 +1,28 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12">
-      <h1>Olá! Meu nome é {{nome}}</h1>
-      <hr>
-      <app-servers></app-servers>
+      <p>Add ner Servers or blueprints!</p>
+      <label for="">Server Name</label>
+      <input type="text" class="form-control" [(ngModel)]="newServerName">
+      <label for="">Server Content</label>
+      <input type="text" class="form-control" [(ngModel)]="newServerContent">
+      <br>
+      <button class="btn btn-primary" (click)="onAddServer()">Add Server</button>
+      <button class="btn btn-primary" (click)="onAddServerBlueprint()">Add Server Blueprint</button>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="panel panel-default" *ngFor="let element of serverElements">
+        <div class="panel-heading">{{ element.nome }}</div>
+        <div class="panel-body">
+          <p>
+            <strong *ngIf="element.type === 'server'; else elseBlock" style="color: red">{{ element.content }}</strong>
+            <ng-template #elseBlock><strong style="color: blue">{{ element.content }}</strong></ng-template>
+          </p>
+        </div>
+      </div>
     </div>
   </div>
 </div>
