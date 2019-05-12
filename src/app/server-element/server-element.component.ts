@@ -1,9 +1,10 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-server-element',
   templateUrl: './server-element.component.html',
-  styleUrls: ['./server-element.component.css']
+  styleUrls: ['./server-element.component.css'],
+  encapsulation: ViewEncapsulation.Emulated //a view encapsulation serve para dizer que os estilos aplicados no css deste componente,, pode afetar globalmente todos os elementos
 })
 export class ServerElementComponent implements OnInit {
   //esse  @Input é preciso para que o HMTL que está executando o FOR ache ele entre os componentes, importante lembrar que por padrão ele não vem importado, é preciso colocar ele no import no topo deste arquivo
