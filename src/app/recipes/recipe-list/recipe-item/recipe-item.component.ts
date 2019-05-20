@@ -12,7 +12,7 @@ export class RecipeItemComponent implements OnInit {
 
   @Output() recipeSelected = new EventEmitter<void>();
 
-  onSelected(nameInput){
+  onSelected(){
     this.recipeSelected.emit() 
   }
   
