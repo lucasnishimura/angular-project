@@ -17,6 +17,7 @@ export class AccountComponent {
 
   onSetTo(status: string) {
     this.accountsService.updateStatus(this.id,status)
-    this.logginService.logStatusChange(status)  //chama o método como se ele estivesse no nosso escopo
+    // this.logginService.logStatusChange(status)  //chama o método como se ele estivesse no nosso escopo
+    this.accountsService.statusUpdated.emit(status);
   }
 }

@@ -12,7 +12,11 @@ import { AccountsService } from '../account.service';
 
 export class NewAccountComponent {
   constructor(private logginService: LoggingService,
-  private accountsService: AccountsService){} //usado para instanciar o nossa classe com o método que preciso
+  private accountsService: AccountsService){
+    this.accountsService.statusUpdated.subscribe(
+      (status: string) => alert('new staus: '+status)
+    )
+  } //usado para instanciar o nossa classe com o método que preciso
 
   onCreateAccount(accountName: string, accountStatus: string) {
     this.accountsService.addAccount(accountName, accountStatus);
