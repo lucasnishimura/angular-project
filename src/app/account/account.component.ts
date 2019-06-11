@@ -6,7 +6,7 @@ import { AccountsService } from '../account.service';
   selector: 'app-account',
   templateUrl: './account.component.html',
   styleUrls: ['./account.component.css'],
-  providers: [LoggingService, AccountsService] //usado para adicionar métodos e usa-lo neste component
+  providers: [LoggingService] //usado para adicionar métodos e usa-lo neste component
 })
 export class AccountComponent {
   @Input() account: {name: string, status: string};

@@ -7,7 +7,7 @@ import { AccountsService } from '../account.service';
   selector: 'app-new-account',
   templateUrl: './new-account.component.html',
   styleUrls: ['./new-account.component.css'],
-  providers: [LoggingService, AccountsService] //usado para adicionar métodos e usa-lo neste component
+  // providers: [LoggingService] //usado para adicionar métodos e usa-lo neste component
 })
 
 export class NewAccountComponent {
@@ -16,6 +16,6 @@ export class NewAccountComponent {
 
   onCreateAccount(accountName: string, accountStatus: string) {
     this.accountsService.addAccount(accountName, accountStatus);
-    this.logginService.logStatusChange(accountStatus)  //chama o método como se ele estivesse no nosso escopo
+    // this.logginService.logStatusChange(accountStatus)  //chama o método como se ele estivesse no nosso escopo
   }
 }
