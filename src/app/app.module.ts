@@ -22,11 +22,11 @@ import { AppRoutingModule } from './app-routing.module';
     UserComponent,
     EditServerComponent,
     ServerComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,
-    FormsModule,,
+    FormsModule,
     AppRoutingModule
   ],
   providers: [ServersService],
