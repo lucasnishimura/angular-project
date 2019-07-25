@@ -2,17 +2,17 @@ export class AuthService {
   loggedIn = false;
 
   isAuthenticated(){
-    const promisse = new Promisse(
+    const promisse = new Promise(
       (resolve, reject) =>{
         setTimeout(() => {
           resolve(this.loggedIn)
         },800);
-        return promisse;
       }
     )
+    return promisse;
   }
 
-  login(){
+  login(){  
     this.loggedIn = true;
   }
   
